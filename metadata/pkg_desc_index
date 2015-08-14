@@ -1,5 +1,5 @@
 app-crypt/parcimonie_sh 9999: Refresh your GnuPG keyring without disclosing your whole contact list to the world
 app-misc/mat 0.5.3: A toolbox to anonymize/remove metadata.
 net-misc/tor-monitor 9999: A GTK application to display Tor circuits and streams
-www-client/torbrowser 31.8.0_p453: The Tor Browser
+www-client/torbrowser 31.8.0_p453 38.2.0_p500: The Tor Browser
 www-client/torbrowser-launcher 0.1.9 0.2.0: A program to download, updated, and run the Tor Browser Bundle
