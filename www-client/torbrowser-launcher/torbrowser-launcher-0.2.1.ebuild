@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI=5
 
@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="${PYTHON_DEPS}
-	dev-python/pygtk[${PYTHON_USEDEP}]
-	dev-python/twisted-core[${PYTHON_USEDEP},crypt]
-	dev-python/twisted-web[${PYTHON_USEDEP}]"
+	dev-python/pygtk:2[${PYTHON_USEDEP}]
+	>=dev-python/twisted-core-14.0.1[${PYTHON_USEDEP},crypt]
+	>=dev-python/twisted-web-14.0.1[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	app-crypt/gnupg
 	dev-python/psutil[${PYTHON_USEDEP}]
