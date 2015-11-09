@@ -19,14 +19,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="${PYTHON_DEPS}
-	dev-python/pygtk[${PYTHON_USEDEP}]
-	dev-python/twisted-core[${PYTHON_USEDEP},crypt]
-	dev-python/twisted-web[${PYTHON_USEDEP}]"
+	dev-python/pygtk:2[${PYTHON_USEDEP}]
+	>=dev-python/twisted-core-14.0.1[${PYTHON_USEDEP},crypt]
+	>=dev-python/twisted-web-14.0.1[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}
 	app-crypt/gnupg
 	dev-python/psutil[${PYTHON_USEDEP}]
-	dev-python/pyliblzma[${PYTHON_USEDEP}]
-	x11-misc/wmctrl"
+	dev-python/pyliblzma[${PYTHON_USEDEP}]"
 
 python_prepare_all() {
 	distutils-r1_python_prepare_all
