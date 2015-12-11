@@ -2,3 +2,5 @@ app-crypt/parcimonie_sh 9999: Refresh your GnuPG keyring without disclosing your
 app-misc/mat 0.5.4: Metadata Anonymisation Toolkit
 net-misc/tor-monitor 0.2 9999: A GTK application to display Tor circuits and streams
 www-client/torbrowser 38.4.0_p504: The Tor Browser
+www-client/torbrowser-launcher 0.2.1 0.2.2: A program to download, updated, and run the Tor Browser Bundle
+www-servers/onionshare 0.8: Share a file securely and anonymously over Tor
