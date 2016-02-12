@@ -12,9 +12,9 @@ if [[ ${MOZ_ESR} == 1 ]]; then
 	MOZ_PV="${PV/_p*}esr"
 fi
 
-# see https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/versions?h=maint-5.0
-TOR_PV="5.0.7"
-EGIT_COMMIT="tor-browser-${MOZ_PV}-5.0-2-build2"
+# see https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/versions?h=maint-5.5
+TOR_PV="5.5.2"
+EGIT_COMMIT="tor-browser-${MOZ_PV}-5.5-1-build1"
 
 # Patch version
 PATCH="${MY_PN}-38.0-patches-04"
@@ -303,7 +303,7 @@ pkg_postinst() {
 		elog "for further information."
 	fi
 
-	if [[ "${REPLACING_VERSIONS}" ]] && [[ "${REPLACING_VERSIONS}" < "38.2.0_p500" ]]; then
+	if [[ "${REPLACING_VERSIONS}" ]] && [[ "${REPLACING_VERSIONS}" < "38.6.0_p550" ]]; then
 		ewarn "Since this is a major upgrade, you need to start with a fresh profile."
 		ewarn "Either move or remove your profile in \"~/.mozilla/torbrowser/\""
 		ewarn "and let Torbrowser generate a new one."
