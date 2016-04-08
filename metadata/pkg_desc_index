@@ -1,5 +1,4 @@
 app-misc/mat 0.6.1: Metadata Anonymisation Toolkit
-app-misc/tails-installer 4.4.7: A graphical tool to install or upgrade Tails on a USB stick from an ISO image
 net-misc/onioncircuits 0.3 9999: A GTK application to display Tor circuits and streams
 www-client/torbrowser 38.7.1_p554: The Tor Browser
 www-client/torbrowser-launcher 0.2.4: A program to download, updated, and run the Tor Browser Bundle
