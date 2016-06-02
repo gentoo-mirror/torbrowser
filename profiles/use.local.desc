@@ -8,7 +8,9 @@ www-client/torbrowser:egl - Enable EGL provider
 www-client/torbrowser:gstreamer-0 - Use gstreamer:0.10 instead of gstreamer:1 for media support
 www-client/torbrowser:jemalloc3 - Enable or disable jemalloc3 (forced-on when supported prior to 38.0)
 www-client/torbrowser:system-cairo - Use the system-wide x11-libs/cairo instead of bundled.
+www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled.
 www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of bundled.
 www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo instead of bundled.
+www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled.
 www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled.
 www-client/torbrowser:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
