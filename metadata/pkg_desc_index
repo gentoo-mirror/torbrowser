@@ -1,5 +1,5 @@
 app-misc/mat 0.6.1: Metadata Anonymisation Toolkit
 net-misc/onioncircuits 0.4: A GTK application to display Tor circuits and streams
-www-client/torbrowser 45.4.0_p605: The Tor Browser
+www-client/torbrowser 45.4.0_p605-r1: The Tor Browser
 www-client/torbrowser-launcher 0.2.6: A program to download, updated, and run the Tor Browser Bundle
 www-servers/onionshare 0.9.1: Share a file securely and anonymously over Tor
