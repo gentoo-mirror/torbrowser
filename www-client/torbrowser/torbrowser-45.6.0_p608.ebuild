@@ -13,7 +13,7 @@ if [[ ${MOZ_ESR} == 1 ]]; then
 fi
 
 # see https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/versions?h=maint-6.0
-TOR_PV="6.0.7"
+TOR_PV="6.0.8"
 EGIT_COMMIT="tor-browser-${MOZ_PV}-6.0-1-build1"
 
 # Patch version
@@ -62,7 +62,7 @@ DEPEND="${RDEPEND}
 	${ASM_DEPEND}
 	virtual/opengl"
 
-QA_PRESTRIPPED="usr/lib*/${PN}/${PN}/torbrowser"
+QA_PRESTRIPPED="usr/lib*/${PN}-1/${PN}/torbrowser"
 
 BUILD_OBJ_DIR="${S}/ff"
 
@@ -155,20 +155,14 @@ src_prepare() {
 }
 
 src_configure() {
-	MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}/${PN}"
+	MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}-1/${PN}"
 	MEXTENSIONS="default"
 
 	mozconfig_init
 	mozconfig_config
 
-	# We want rpath support to prevent unneeded hacks on different libc variants
-	append-ldflags -Wl,-rpath="${MOZILLA_FIVE_HOME}"
-
 	# Add full relro support for hardened
 	use hardened && append-ldflags "-Wl,-z,relro,-z,now"
-
-	# Removed, per bug 571180
-	#use egl && mozconfig_annotate 'Enable EGL as GL provider' --with-gl-provider=EGL
 
 	mozconfig_annotate '' --enable-extensions="${MEXTENSIONS}"
 	mozconfig_annotate '' --disable-mailnews
@@ -177,7 +171,7 @@ src_configure() {
 	mozconfig_annotate '' --with-default-mozilla-five-home=${MOZILLA_FIVE_HOME}
 
 	# Rename the install directory and the executable
-	mozconfig_annotate 'torbrowser' --libdir=/usr/$(get_libdir)/${PN}
+	mozconfig_annotate 'torbrowser' --libdir=/usr/$(get_libdir)/${PN}-1
 	mozconfig_annotate 'torbrowser' --with-app-name=torbrowser
 	mozconfig_annotate 'torbrowser' --with-app-basename=torbrowser
 	# see https://gitweb.torproject.org/tor-browser.git/tree/configure.in/?h=tor-browser-45.1.1esr-6.0-1#n6519
@@ -210,33 +204,36 @@ src_compile() {
 }
 
 src_install() {
-	MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}/${PN}"
+	MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}-1/${PN}"
 
 	cd "${BUILD_OBJ_DIR}" || die
 
-	# Add an emty default prefs for mozconfig-3.eclass
-	touch "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
-		|| die
+	# Pax mark xpcshell for hardened support, only used for startupcache creation.
+	pax-mark m "${BUILD_OBJ_DIR}"/dist/bin/xpcshell
 
-	# see:https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/descriptors/linux/gitian-bundle.yml#n163
-	touch "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/extension-overrides.js" \
+	# Add an emty default prefs for mozconfig-v6.45.eclass:
+	touch "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js" \
 		|| die
 
 	mozconfig_install_prefs \
 		"${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/all-gentoo.js"
 
-	# see:https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/descriptors/linux/gitian-bundle.yml#n204
-	echo "pref(\"general.useragent.locale\", \"en-US\");" \
-		>> "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/000-tor-browser.js" \
+	# see: https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/descriptors/linux/gitian-bundle.yml?h=maint-6.0#n160
+	touch "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/extension-overrides.js" \
 		|| die
 
-	# see:https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/descriptors/linux/gitian-bundle.yml#n172
+	# see: https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/descriptors/linux/gitian-bundle.yml?h=maint-6.0#n169
 	echo "pref(\"extensions.torlauncher.prompt_for_locale\", \"false\");" \
 		>> "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/extension-overrides.js" \
 		|| die
 
 	echo "pref(\"intl.locale.matchOS\", \"false\");" \
 		>> "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/extension-overrides.js" \
+		|| die
+
+	# see: https://gitweb.torproject.org/builders/tor-browser-bundle.git/tree/gitian/descriptors/linux/gitian-bundle.yml?h=maint-6.0#n201
+	echo "pref(\"general.useragent.locale\", \"en-US\");" \
+		>> "${BUILD_OBJ_DIR}/dist/bin/browser/defaults/preferences/000-tor-browser.js" \
 		|| die
 
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" \
