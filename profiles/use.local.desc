@@ -4,7 +4,6 @@
 
 app-misc/mat:audio - Add support for audio files
 www-client/torbrowser:custom-optimization - Fine-tune custom compiler optimizations (-Os, -O0, -O1, -O2, -O3)
-www-client/torbrowser:gstreamer-0 - Use gstreamer:0.10 instead of gstreamer:1 for media support
 www-client/torbrowser:jemalloc3 - Enable or disable jemalloc3 (forced-on when supported prior to 38.0)
 www-client/torbrowser:system-cairo - Use the system-wide x11-libs/cairo instead of bundled.
 www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled.
