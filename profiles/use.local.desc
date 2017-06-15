@@ -6,7 +6,6 @@ app-misc/mat:audio - Add support for audio files
 www-client/torbrowser:custom-optimization - Build with user-specified compiler optimizations (-Os, -O0, -O1, -O2, -O3) from CFLAGS (unsupported)
 www-client/torbrowser:gtk2 - Use the cairo-gtk2 rendering engine
 www-client/torbrowser:jemalloc - Enable or disable jemalloc
-www-client/torbrowser:jemalloc3 - Enable or disable jemalloc3 (forced-on when supported prior to 38.0)
 www-client/torbrowser:system-cairo - Use the system-wide x11-libs/cairo instead of bundled.
 www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled.
 www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of bundled.
