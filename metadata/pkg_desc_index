@@ -2,6 +2,6 @@ app-misc/mat 0.6.1-r1: Metadata Anonymisation Toolkit
 net-libs/stem 1.5.4_p20170909: Stem is a Python controller library for Tor
 net-misc/nyx 9999: A ncurses-based status monitor for Tor relays
 net-misc/onioncircuits 0.4: A GTK application to display Tor circuits and streams
-www-client/torbrowser 52.3.0_p705: The Tor Browser
+www-client/torbrowser 52.4.0_p706: The Tor Browser
 www-client/torbrowser-launcher 0.2.8: A program to download, updated, and run the Tor Browser Bundle
 www-servers/onionshare 1.1: Share a file securely and anonymously over Tor
