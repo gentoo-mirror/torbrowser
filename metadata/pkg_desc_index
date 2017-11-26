@@ -1,5 +1,4 @@
 app-misc/mat 0.6.1-r1: Metadata Anonymisation Toolkit
-net-libs/stem 1.6.0: Stem is a Python controller library for Tor
 net-misc/nyx 2.0.4 9999: Terminal status monitor for Tor
 net-misc/onioncircuits 0.5: A GTK application to display Tor circuits and streams
 www-client/torbrowser 52.5.0_p7010: The Tor Browser
