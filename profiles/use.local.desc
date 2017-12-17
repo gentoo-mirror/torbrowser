@@ -2,14 +2,3 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-app-misc/mat:audio - Add support for audio files
-www-client/torbrowser:custom-optimization - Build with user-specified compiler optimizations (-Os, -O0, -O1, -O2, -O3) from CFLAGS (unsupported)
-www-client/torbrowser:gtk2 - Use the cairo-gtk2 rendering engine
-www-client/torbrowser:jemalloc - Enable or disable jemalloc
-www-client/torbrowser:system-cairo - Use the system-wide x11-libs/cairo instead of bundled.
-www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled.
-www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of bundled.
-www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo instead of bundled.
-www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled.
-www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled.
-www-client/torbrowser:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
