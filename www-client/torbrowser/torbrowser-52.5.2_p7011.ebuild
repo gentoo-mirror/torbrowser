@@ -16,7 +16,7 @@ TOR_PV="7.0.11"
 EGIT_COMMIT="tor-browser-${MOZ_PV}-7.0-2-build1"
 
 # Patch version
-PATCH="${MY_PN}-52.4-patches-02"
+PATCH="${MY_PN}-52.5-patches-01"
 
 MOZCONFIG_OPTIONAL_GTK2ONLY=1
 MOZCONFIG_OPTIONAL_WIFI=1
@@ -290,8 +290,6 @@ src_install() {
 }
 
 pkg_preinst() {
-	gnome2_icon_savelist
-
 	# if the apulse libs are available in MOZILLA_FIVE_HOME then apulse
 	# doesn't need to be forced into the LD_LIBRARY_PATH
 	if use pulseaudio && has_version ">=media-sound/apulse-0.1.9" ; then
