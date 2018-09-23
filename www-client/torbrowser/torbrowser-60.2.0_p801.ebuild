@@ -12,8 +12,8 @@ if [[ ${MOZ_ESR} == 1 ]]; then
 fi
 
 # see https://gitweb.torproject.org/builders/tor-browser-build.git/tree/projects/firefox/config?h=maint-8.0#n4
-TOR_PV="8.0"
-TOR_COMMIT="tor-browser-${MOZ_PV}-${TOR_PV%.*}.0-1-build2"
+TOR_PV="8.0.1"
+TOR_COMMIT="tor-browser-${MOZ_PV}-${TOR_PV%.*}-1-build5"
 
 # Patch version
 PATCH="${MY_PN}-60.0-patches-03"
@@ -173,17 +173,18 @@ src_configure() {
 	echo "mk_add_options MOZ_APP_DISPLAYNAME=\"Tor Browser\"" >> "${S}"/.mozconfig
 	echo "mk_add_options MOZILLA_OFFICIAL=1" >> "${S}"/.mozconfig
 	echo "mk_add_options BUILD_OFFICIAL=1" >> "${S}"/.mozconfig
-
-	mozconfig_annotate 'torbrowser' --with-app-name=torbrowser
-	mozconfig_annotate 'torbrowser' --with-app-basename=torbrowser
 	mozconfig_annotate 'torbrowser' --enable-official-branding
-
-	mozconfig_annotate 'torbrowser' --with-tor-browser-version=${TOR_PV}
-	mozconfig_annotate 'torbrowser' --disable-tor-browser-update
-
 	mozconfig_annotate 'torbrowser' --disable-webrtc
 	mozconfig_annotate 'torbrowser' --disable-eme
 	mozconfig_annotate 'torbrowser' --enable-proxy-bypass-protection
+
+	# rename the binary and set the profile location
+	mozconfig_annotate 'torbrowser' --with-app-name=torbrowser
+	mozconfig_annotate 'torbrowser' --with-app-basename=torbrowser
+
+	# see https://gitweb.torproject.org/tor-browser.git/tree/old-configure.in?h=tor-browser-60.2.0esr-8.0-1#n3205
+	mozconfig_annotate 'torbrowser' --with-tor-browser-version=${TOR_PV}
+	mozconfig_annotate 'torbrowser' --disable-tor-browser-update
 
 	# torbrowser uses a patched nss library
 	# see https://gitweb.torproject.org/tor-browser.git/log/security/nss?h=tor-browser-60.2.0esr-8.0-1-build1
@@ -324,7 +325,7 @@ pkg_postinst() {
 		elog "media-sound/apulse."
 	fi
 
-	#if [[ -z ${REPLACING_VERSIONS} ]]; then
+	if [[ -z ${REPLACING_VERSIONS} ]]; then
 		ewarn "This patched firefox build is _NOT_ recommended by Tor upstream but uses"
 		ewarn "the exact same sources. Use this only if you know what you are doing!"
 		elog "Torbrowser uses port 9150 to connect to Tor. You can change the port"
@@ -334,7 +335,7 @@ pkg_postinst() {
 		elog "To get the advanced functionality of Torbutton (network information,"
 		elog "new identity), Torbrowser needs to access a control port."
 		elog "Set the Variables in /etc/env.d/99torbrowser accordingly."
-	#fi
+	fi
 
 	if [[ "${REPLACING_VERSIONS}" ]] && [[ "${REPLACING_VERSIONS}" < "60.2.0_p800" ]]; then
 		ewarn "Since this is a major upgrade, you need to start with a fresh profile."
