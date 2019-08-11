@@ -2,3 +2,17 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+app-misc/mat2:audio - Add support for audio files
+app-misc/mat2:image - Add support for image files
+app-misc/mat2:nautilus - Add support for the nautilus menu integration
+app-misc/mat2:sandbox - Use sys-apps/bubblewrap to sandbox external processes
+app-misc/mat2:video - Add support for video files
+www-client/torbrowser:clang - Use Clang compiler instead of GCC
+www-client/torbrowser:custom-optimization - Build with user-specified compiler optimizations (-Os, -O0, -O1, -O2, -O3) from CFLAGS (unsupported)
+www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled.
+www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of bundled.
+www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo instead of bundled.
+www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled.
+www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled.
+www-client/torbrowser:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
+www-servers/onionshare:nautilus - Add support for the nautilus menu integration
