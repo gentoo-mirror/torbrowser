@@ -1,6 +1,6 @@
-app-misc/mat2 0.10.0 9999: Metadata Anonymisation Toolkit
+app-misc/mat2 0.10.1 9999: Metadata Anonymisation Toolkit
 dev-python/flask-httpauth 3.3.0: Provides Basic and Digest HTTP authentication for Flask routes
-dev-python/nautilus-python 1.2.2: Python bindings for the Nautilus file manager
+dev-python/nautilus-python 1.2.2-r1: Python bindings for the Nautilus file manager
 net-misc/onioncircuits 0.6: A GTK application to display Tor circuits and streams
 www-client/torbrowser 68.4.1_p904: The Tor Browser
 www-client/torbrowser-launcher 0.3.2: A program to download, updated, and run the Tor Browser Bundle
