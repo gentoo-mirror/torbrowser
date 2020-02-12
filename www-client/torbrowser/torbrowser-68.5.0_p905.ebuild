@@ -1,10 +1,10 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI="6"
 WANT_AUTOCONF="2.1"
 
-PYTHON_COMPAT=( python3_{5,6,7} )
+PYTHON_COMPAT=( python3_{6,7} )
 PYTHON_REQ_USE='ncurses,sqlite,ssl,threads(+)'
 
 MOZ_PV="${PV/_p*}esr"
@@ -12,8 +12,8 @@ MOZ_PV="${PV/_p*}esr"
 # see https://gitweb.torproject.org/builders/tor-browser-build.git/tree/projects/firefox/config?h=maint-9.0#n4
 # and https://gitweb.torproject.org/tor-browser.git/log/toolkit/torproject?h=tor-browser-68.4.1esr-9.0-1
 # and https://gitweb.torproject.org/builders/tor-browser-build.git/tree/projects/tor-launcher/config?h=maint-9.0#n2
-TOR_PV="9.0.4"
-TOR_COMMIT="tor-browser-${MOZ_PV}-${TOR_PV%.*}-1-build1"
+TOR_PV="9.0.5"
+TOR_COMMIT="tor-browser-${MOZ_PV}-${TOR_PV%.*}-1-build2"
 TORBUTTON_COMMIT="e4fcf3067d24d8abc0a00093529bbfefd71c8d0"
 TORLAUNCHER_VERSION="0.2.20.5"
 
@@ -24,7 +24,7 @@ LLVM_MAX_SLOT=9
 
 inherit check-reqs desktop flag-o-matic toolchain-funcs eutils \
 	gnome2-utils llvm mozcoreconf-v6 pax-utils xdg-utils \
-	autotools multiprocessing
+	autotools
 
 DESCRIPTION="The Tor Browser"
 HOMEPAGE="https://www.torproject.org/projects/torbrowser.html
@@ -129,14 +129,6 @@ DEPEND="${CDEPEND}
 			clang? (
 				=sys-devel/lld-7*
 				sys-devel/llvm:7[gold]
-			)
-		)
-		(
-			sys-devel/clang:6
-			!clang? ( sys-devel/llvm:6 )
-			clang? (
-				=sys-devel/lld-6*
-				sys-devel/llvm:6[gold]
 			)
 		)
 	)
