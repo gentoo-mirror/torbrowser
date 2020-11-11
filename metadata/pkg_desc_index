@@ -1,6 +1,6 @@
 app-misc/mat2 0.11.0 9999: Metadata Anonymisation Toolkit
 dev-python/flask-httpauth 4.0.0: Provides Basic and Digest HTTP authentication for Flask routes
 net-misc/onioncircuits 0.6: A GTK application to display Tor circuits and streams
-www-client/torbrowser 78.4.0_p1002: Private browsing without tracking, surveillance, or censorship
+www-client/torbrowser 78.4.0_p1004: Private browsing without tracking, surveillance, or censorship
 www-client/torbrowser-launcher 0.3.3: A program to download, updated, and run the Tor Browser Bundle
 www-servers/onionshare 2.2-r1: Securely and anonymously send and receive files over Tor
