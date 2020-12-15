@@ -15,4 +15,5 @@ www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo
 www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled.
 www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled.
 www-client/torbrowser:system-webp - Use the system-wide media-libs/libwebp instead of bundled.
+www-client/torbrowser-launcher:apparmor - Enable AppArmor support
 www-servers/onionshare:nautilus - Add support for the nautilus menu integration
