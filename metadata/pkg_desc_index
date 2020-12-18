@@ -1,4 +1,4 @@
-app-misc/mat2 0.11.0 9999: Metadata Anonymisation Toolkit
+app-misc/mat2 0.12.0 9999: Metadata Anonymisation Toolkit
 dev-python/flask-httpauth 4.0.0: Provides Basic and Digest HTTP authentication for Flask routes
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
 www-client/torbrowser 78.6.0_p1007: Private browsing without tracking, surveillance, or censorship
