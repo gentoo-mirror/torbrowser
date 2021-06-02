@@ -4,8 +4,9 @@ dev-python/bidict 0.21.2: The bidirectional mapping library for Python.
 dev-python/flask-httpauth 4.2.0: Provides Basic and Digest HTTP authentication for Flask routes
 dev-python/flask-socketio 5.0.1: Socket.IO integration for Flask applications.
 dev-python/python-socketio 5.0.4: Python implementation of the Socket.IO realtime server.
+net-misc/nyx 2.1.0-r1: Utility to monitor real time Tor status information
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
 www-client/torbrowser 78.10.0_p10016: Private browsing without tracking, surveillance, or censorship
 www-client/torbrowser-launcher 0.3.3: A program to download, updated, and run the Tor Browser Bundle
-www-servers/onionshare 2.2-r1 2.3.1: Share files, host websites, and chat with friends using the Tor network.
-www-servers/onionshare-cli 2.3.1: Share files, host websites, and chat with friends using the Tor network.
+www-servers/onionshare 2.3.2: Share files, host websites, and chat with friends using the Tor network.
+www-servers/onionshare-cli 2.3.2: Share files, host websites, and chat with friends using the Tor network.
