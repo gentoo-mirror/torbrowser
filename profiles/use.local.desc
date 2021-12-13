@@ -11,5 +11,6 @@ www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of b
 www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo instead of bundled.
 www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled.
 www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled.
+www-client/torbrowser:system-png - Use the system-wide media-libs/libpng instead of bundled (requires APNG patches).
 www-client/torbrowser:system-webp - Use the system-wide media-libs/libwebp instead of bundled.
 www-client/torbrowser-launcher:apparmor - Enable AppArmor support
