@@ -4,7 +4,7 @@ dev-python/bidict 0.21.2: The bidirectional mapping library for Python.
 dev-python/flask-httpauth 4.4.0: Provides Basic and Digest HTTP authentication for Flask routes
 dev-python/flask-socketio 5.1.1: Socket.IO integration for Flask applications.
 dev-python/python-socketio 5.4.0: Python implementation of the Socket.IO realtime server.
-net-libs/stem 1.8.1: Stem is a Python controller library for Tor
+net-libs/stem 1.8.3: Stem is a Python controller library for Tor
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
 www-client/torbrowser 91.4.1_p11003: Private browsing without tracking, surveillance, or censorship
 www-client/torbrowser-launcher 0.3.4: A program to download, updated, and run the Tor Browser Bundle
