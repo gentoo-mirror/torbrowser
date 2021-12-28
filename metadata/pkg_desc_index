@@ -7,6 +7,6 @@ dev-python/python-socketio 5.4.0: Python implementation of the Socket.IO realtim
 net-libs/stem 1.8.3: Stem is a Python controller library for Tor
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
 www-client/torbrowser 91.4.1_p11003: Private browsing without tracking, surveillance, or censorship
-www-client/torbrowser-launcher 0.3.4: A program to download, updated, and run the Tor Browser Bundle
+www-client/torbrowser-launcher 0.3.5: A program to download, updated, and run the Tor Browser Bundle
 www-servers/onionshare 2.4: Share files, host websites, and chat with friends using the Tor network.
 www-servers/onionshare-cli 2.4: Share files, host websites, and chat with friends using the Tor network.
