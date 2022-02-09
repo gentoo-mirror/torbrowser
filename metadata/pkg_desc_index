@@ -7,8 +7,8 @@ dev-python/flask-socketio 5.1.1: Socket.IO integration for Flask applications.
 dev-python/python-socketio 5.5.1: Python implementation of the Socket.IO realtime server.
 net-libs/stem 1.8.3: Stem is a Python controller library for Tor
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
-net-proxy/snowflake 2.0.1: WebRTC pluggable transport proxy for Tor
-www-client/torbrowser 91.5.0_p11004: Private browsing without tracking, surveillance, or censorship
+net-proxy/snowflake 2.1.0: WebRTC pluggable transport proxy for Tor
+www-client/torbrowser 91.6.0_p11006: Private browsing without tracking, surveillance, or censorship
 www-client/torbrowser-launcher 0.3.5: A program to download, updated, and run the Tor Browser Bundle
 www-servers/onionshare 2.5: Share files, host websites, and chat with friends using the Tor network.
 www-servers/onionshare-cli 2.5: Share files, host websites, and chat with friends using the Tor network.
