@@ -10,7 +10,7 @@ net-libs/stem 1.8.3: Stem is a Python controller library for Tor
 net-misc/nyx 2.1.0-r3: Utility to monitor real time Tor status information
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
 net-proxy/snowflake 2.3.0: WebRTC pluggable transport proxy for Tor
-www-client/torbrowser 91.10.0_p11014: Private browsing without tracking, surveillance, or censorship
+www-client/torbrowser 91.10.0_p11015: Private browsing without tracking, surveillance, or censorship
 www-client/torbrowser-launcher 0.3.5 0.3.5-r1: A program to download, updated, and run the Tor Browser Bundle
 www-servers/onionshare 2.5: Share files, host websites, and chat with friends using the Tor network.
 www-servers/onionshare-cli 2.5: Share files, host websites, and chat with friends using the Tor network.
