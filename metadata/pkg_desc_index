@@ -1,7 +1,7 @@
 acct-group/snowflake 0-r1: group for snowflake proxy
 acct-user/snowflake 0-r1: user for snowflake proxy
 app-misc/mat2 0.13.0: Metadata Anonymisation Toolkit
-app-misc/metadata-cleaner 2.2.3: Python GTK application to view and clean metadata in files, using mat2.
+app-misc/metadata-cleaner 2.2.4: Python GTK application to view and clean metadata in files, using mat2.
 dev-python/bidict 0.21.4: The bidirectional mapping library for Python.
 dev-python/eventlet 0.33.1: Highly concurrent networking library
 dev-python/flask-socketio 5.1.1: Socket.IO integration for Flask applications.
