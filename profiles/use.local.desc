@@ -5,12 +5,13 @@
 app-misc/mat2:sandbox - Enable sandboxing functionality through sys-apps/bubblewrap
 app-misc/mat2:video - Use media-video/ffmpeg for video support
 www-client/torbrowser:clang - Use Clang compiler instead of GCC
-www-client/torbrowser:system-av1 - Use the system-wide media-libs/dav1d and media-libs/libaom library instead of bundled.
-www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled.
-www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of bundled.
-www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo instead of bundled.
-www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled.
-www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled.
-www-client/torbrowser:system-png - Use the system-wide media-libs/libpng instead of bundled (requires APNG patches).
-www-client/torbrowser:system-webp - Use the system-wide media-libs/libwebp instead of bundled.
+www-client/torbrowser:system-av1 - Use the system-wide media-libs/dav1d and media-libs/libaom library instead of bundled
+www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled
+www-client/torbrowser:system-icu - Use the system-wide dev-libs/icu instead of bundled
+www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo instead of bundled
+www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled
+www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled
+www-client/torbrowser:system-png - Use the system-wide media-libs/libpng instead of bundled (requires APNG patches)
+www-client/torbrowser:system-python-libs - Use system's python site instead of bundled python libraries
+www-client/torbrowser:system-webp - Use the system-wide media-libs/libwebp instead of bundled
 www-client/torbrowser-launcher:apparmor - Enable AppArmor support
