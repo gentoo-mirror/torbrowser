@@ -14,4 +14,3 @@ www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx inst
 www-client/torbrowser:system-png - Use the system-wide media-libs/libpng instead of bundled (requires APNG patches)
 www-client/torbrowser:system-python-libs - Use system's python site instead of bundled python libraries
 www-client/torbrowser:system-webp - Use the system-wide media-libs/libwebp instead of bundled
-www-client/torbrowser-launcher:apparmor - Enable AppArmor support
