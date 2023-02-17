@@ -7,7 +7,7 @@ FIREFOX_PATCHSET="firefox-102esr-patches-07j.tar.xz"
 
 LLVM_MAX_SLOT=15
 
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{9..11} )
 PYTHON_REQ_USE="ncurses,sqlite,ssl"
 
 WANT_AUTOCONF="2.1"
@@ -18,10 +18,10 @@ MOZ_PV="${PV/_p*}esr"
 # see https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/maint-12.0/projects/firefox/config#L15
 # and https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/maint-12.0/projects/browser/config#L104
 # and https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/tags
-TOR_PV="12.0.2"
-TOR_TAG="${TOR_PV%.*}-1-build1"
-NOSCRIPT_VERSION="11.4.14"
-CHANGELOG_TAG="${TOR_PV}-build2"
+TOR_PV="12.0.3"
+TOR_TAG="${TOR_PV%.*}-1-build2"
+NOSCRIPT_VERSION="11.4.16"
+CHANGELOG_TAG="${TOR_PV}-build1"
 
 inherit autotools check-reqs desktop flag-o-matic linux-info \
 	llvm multiprocessing pax-utils python-any-r1 toolchain-funcs xdg
@@ -43,7 +43,7 @@ SRC_URI="
 DESCRIPTION="Private browsing without tracking, surveillance, or censorship"
 HOMEPAGE="https://www.torproject.org/ https://gitlab.torproject.org/tpo/applications/tor-browser/"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
 SLOT="0"
 LICENSE="BSD CC-BY-3.0 MPL-2.0 GPL-2 LGPL-2.1"
@@ -319,6 +319,8 @@ pkg_setup() {
 }
 
 src_prepare() {
+	rm -v "${WORKDIR}/firefox-patches/0031-bmo-1769631-python-3.11-compatibility.patch" || die
+	rm -v "${WORKDIR}/firefox-patches/0032-bmo-1769631-python-3.11-compatibility.patch" || die
 	eapply "${WORKDIR}/firefox-patches"
 
 	# Revert "Change the default Firefox profile directory to be TBB-relative"
@@ -464,9 +466,7 @@ src_configure() {
 		--x-includes="${ESYSROOT}/usr/include" \
 		--x-libraries="${ESYSROOT}/usr/$(get_libdir)"
 
-	if ! use x86 ; then
-		mozconfig_add_options_ac '' --enable-rust-simd
-	fi
+	mozconfig_add_options_ac '' --enable-rust-simd
 
 	mozconfig_use_with system-av1
 	mozconfig_use_with system-harfbuzz
@@ -574,10 +574,6 @@ src_configure() {
 		# toolkit/moz.configure Elfhack section: target.cpu in ('arm', 'x86', 'x86_64')
 		local disable_elf_hack=
 		if use amd64 ; then
-			disable_elf_hack=yes
-		elif use x86 ; then
-			disable_elf_hack=yes
-		elif use arm ; then
 			disable_elf_hack=yes
 		fi
 
