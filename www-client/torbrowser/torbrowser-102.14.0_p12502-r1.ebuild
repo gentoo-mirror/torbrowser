@@ -36,6 +36,8 @@ PATCH_URIS=(
 SRC_URI="
 	${TOR_SRC_BASE_URI}/src-firefox-tor-browser-${MOZ_PV}-${TOR_TAG}.tar.xz
 	${TOR_SRC_ARCHIVE_URI}/src-firefox-tor-browser-${MOZ_PV}-${TOR_TAG}.tar.xz
+	${TOR_SRC_BASE_URI}/tor-browser-linux64-${TOR_PV}_ALL.tar.xz
+	${TOR_SRC_ARCHIVE_URI}/tor-browser-linux64-${TOR_PV}_ALL.tar.xz
 	https://addons.mozilla.org/firefox/downloads/file/3954910/noscript-${NOSCRIPT_VERSION}.xpi
 	https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/raw/tbb-${CHANGELOG_TAG}/projects/browser/Bundle-Data/Docs-TBB/ChangeLog.txt -> ${P}-ChangeLog.txt
 	${PATCH_URIS[@]}"
@@ -743,6 +745,9 @@ src_install() {
 	newbin - torbrowser <<-EOF
 		#!/bin/bash
 
+		export FONTCONFIG_PATH="/usr/share/torbrowser/fontconfig"
+		export FONTCONFIG_FILE="fonts.conf"
+
 		unset SESSION_MANAGER
 		export GSETTINGS_BACKEND=memory
 
@@ -768,6 +773,14 @@ src_install() {
 	# torbrowser and torbrowser-bin are identical
 	rm "${ED}"${MOZILLA_FIVE_HOME}/torbrowser-bin || die
 	dosym torbrowser ${MOZILLA_FIVE_HOME}/torbrowser-bin
+
+	# https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/main/projects/browser/RelativeLink/start-browser#L340
+	# https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/tree/main/projects/fonts
+	sed -i -e 's|<dir>fonts</dir>|<dir>/usr/share/torbrowser/fonts</dir>|' \
+		${WORKDIR}/tor-browser/Browser/fontconfig/fonts.conf || die
+	insinto /usr/share/torbrowser/
+	doins -r "${WORKDIR}/tor-browser/Browser/fontconfig"
+	doins -r "${WORKDIR}/tor-browser/Browser/fonts"
 
 	# see https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/main/projects/browser/Bundle-Data/Docs/ChangeLog.txt
 	newdoc "${DISTDIR}/${P}-ChangeLog.txt" ChangeLog.txt
