@@ -4,5 +4,5 @@ app-misc/mat2 0.13.4: Metadata Anonymisation Toolkit
 app-misc/metadata-cleaner 2.5.2: Python GTK application to view and clean metadata in files, using mat2.
 net-misc/onioncircuits 0.7: A GTK application to display Tor circuits and streams
 net-proxy/snowflake 2.6.0: WebRTC pluggable transport proxy for Tor
-www-client/torbrowser 102.14.0_p12502: Private browsing without tracking, surveillance, or censorship
+www-client/torbrowser 102.14.0_p12502 102.14.0_p12502-r1: Private browsing without tracking, surveillance, or censorship
 www-client/torbrowser-launcher 0.3.6-r1: A program to download, updated, and run the Tor Browser Bundle
