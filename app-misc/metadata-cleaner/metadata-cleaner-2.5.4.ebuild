@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit gnome2-utils meson python-single-r1
 
@@ -25,7 +25,6 @@ DEPEND="${PYTHON_DEPS}
 	')"
 
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 S=${WORKDIR}/metadata-cleaner-v${PV}
 
