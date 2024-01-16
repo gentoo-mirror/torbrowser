@@ -2,8 +2,6 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-app-misc/mat2:sandbox - Enable sandboxing functionality through sys-apps/bubblewrap
-app-misc/mat2:video - Use media-video/ffmpeg for video support
 www-client/torbrowser:clang - Use Clang compiler instead of GCC
 www-client/torbrowser:system-av1 - Use the system-wide media-libs/dav1d and media-libs/libaom library instead of bundled
 www-client/torbrowser:system-harfbuzz - Use the system-wide media-libs/harfbuzz and media-gfx/graphite2 instead of bundled
