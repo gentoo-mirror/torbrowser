@@ -18,7 +18,7 @@ MOZ_PV="${PV/_p*}esr"
 # see https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/maint-13.0/projects/firefox/config?ref_type=heads#L17
 # and https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/maint-13.0/projects/browser/config?ref_type=heads#L99
 # and https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/tags
-TOR_PV="13.0.13"
+TOR_PV="13.0.14"
 TOR_TAG="${TOR_PV%.*}-1-build1"
 NOSCRIPT_VERSION="11.4.29"
 CHANGELOG_TAG="${TOR_PV}-build1"
@@ -752,7 +752,7 @@ src_install() {
 	newbin - torbrowser <<-EOF
 		#!/bin/bash
 
-		export FONTCONFIG_PATH="/usr/share/torbrowser/fontconfig"
+		export FONTCONFIG_PATH="/usr/share/torbrowser"
 		export FONTCONFIG_FILE="fonts.conf"
 
 		unset SESSION_MANAGER
@@ -784,10 +784,10 @@ src_install() {
 
 	# https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/main/projects/browser/RelativeLink/start-browser#L340
 	# https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/tree/main/projects/fonts
-	sed -i -e 's|<dir>fonts</dir>|<dir>/usr/share/torbrowser/fonts</dir>|' \
+	sed -i -e 's|<dir prefix="cwd">fonts</dir>|<dir prefix="relative">fonts</dir>|' \
 		"${WORKDIR}"/tor-browser/Browser/fontconfig/fonts.conf || die
 	insinto /usr/share/torbrowser/
-	doins -r "${WORKDIR}/tor-browser/Browser/fontconfig"
+	doins "${WORKDIR}/tor-browser/Browser/fontconfig/fonts.conf"
 	doins -r "${WORKDIR}/tor-browser/Browser/fonts"
 
 	# see https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/blob/main/projects/browser/Bundle-Data/Docs/ChangeLog.txt
