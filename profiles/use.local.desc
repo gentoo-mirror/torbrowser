@@ -11,5 +11,4 @@ www-client/torbrowser:system-jpeg - Use the system-wide media-libs/libjpeg-turbo
 www-client/torbrowser:system-libevent - Use the system-wide dev-libs/libevent instead of bundled
 www-client/torbrowser:system-libvpx - Use the system-wide media-libs/libvpx instead of bundled
 www-client/torbrowser:system-png - Use the system-wide media-libs/libpng instead of bundled (requires APNG patches)
-www-client/torbrowser:system-python-libs - Use system's python site instead of bundled python libraries
 www-client/torbrowser:system-webp - Use the system-wide media-libs/libwebp instead of bundled
