@@ -3,7 +3,7 @@
 
 EAPI=8
 
-FIREFOX_PATCHSET="firefox-128esr-patches-04.tar.xz"
+FIREFOX_PATCHSET="firefox-128esr-patches-07.tar.xz"
 
 LLVM_COMPAT=( 17 18 19 )
 
@@ -55,19 +55,20 @@ LICENSE="BSD CC-BY-3.0 MPL-2.0 GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="clang dbus hardened +jumbo-build"
-IUSE+=" pulseaudio +system-av1 +system-harfbuzz +system-icu +system-jpeg"
-IUSE+=" +system-libevent +system-libvpx system-png +system-webp wayland +X"
+IUSE="+clang dbus hardened pulseaudio"
+IUSE+=" +system-av1 +system-harfbuzz +system-icu +system-jpeg +system-libevent +system-libvpx"
+IUSE+=" system-png +system-webp wayland +X"
+IUSE+=" +jumbo-build"
 
 REQUIRED_USE="|| ( X wayland )
 	wayland? ( dbus )"
 
 BDEPEND="${PYTHON_DEPS}
 	$(llvm_gen_dep '
-		sys-devel/clang:${LLVM_SLOT}
-		sys-devel/llvm:${LLVM_SLOT}
+		llvm-core/clang:${LLVM_SLOT}
+		llvm-core/llvm:${LLVM_SLOT}
 		clang? (
-			sys-devel/lld:${LLVM_SLOT}
+			llvm-core/lld:${LLVM_SLOT}
 		)
 	')
 	app-alternatives/awk
@@ -242,10 +243,8 @@ pkg_setup() {
 	CHECKREQS_DISK_BUILD="6400M"
 
 	check-reqs_pkg_setup
-
 	llvm-r1_pkg_setup
 	rust_pkg_setup
-
 	python-any-r1_pkg_setup
 
 	# These should *always* be cleaned up anyway
