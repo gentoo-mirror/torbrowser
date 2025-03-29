@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 PYTHON_REQ_USE="xml(+)"
 DISTUTILS_USE_PEP517=setuptools
 
@@ -29,7 +29,7 @@ RDEPEND="
 BDEPEND="
 	test? (
 		media-libs/exiftool:*
-		media-video/ffmpeg[mp3,vorbis]
+		media-video/ffmpeg[lame,vorbis]
 		x11-libs/gdk-pixbuf:2[introspection,jpeg,tiff]
 	)
 "
